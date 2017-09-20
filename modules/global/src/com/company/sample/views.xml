@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+    <view class="com.company.sample.entity.Foo"
+          extends="_local"
+          name="foo-view">
+        <property name="mainBar"
+                  view="_minimal">
+            <property name="foo"
+                      view="_minimal"/>
+        </property>
+        <property name="bars"
+                  view="_minimal"/>
+    </view>
+</views>

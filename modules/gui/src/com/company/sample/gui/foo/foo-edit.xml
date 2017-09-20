@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.sample.gui.foo.FooEdit"
+        datasource="fooDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.sample.gui.foo">
+    <dsContext>
+        <datasource id="fooDs"
+                    class="com.company.sample.entity.Foo"
+                    view="foo-view">
+            <datasource id="mainBarDs"
+                        property="mainBar"/>
+            <collectionDatasource id="barsDs"
+                                  property="bars"/>
+        </datasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="fooDs"
+                    editable="false">
+            <column width="250px">
+                <field property="mainBar"/>
+            </column>
+        </fieldGroup>
+        <table height="100px"
+               width="200px">
+            <columns>
+                <column id="id"/>
+            </columns>
+            <rows datasource="barsDs"/>
+        </table>
+        <button id="doNastyThingBtn"
+                width="200px"
+                height="100px"
+                caption="Do nasty thing!"
+                invoke="onDoNastyThingBtnClick"/>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>
